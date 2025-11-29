@@ -6,7 +6,7 @@ import { GrowthSystem } from "./components/landing/GrowthSystem";
 import { BusinessSolution } from "./components/landing/BusinessSolution";
 import { Recruitment } from "./components/landing/Recruitment";
 import { FAQ } from "./components/landing/FAQ";
-import { ContactForm } from "./components/landing/ContactForm";
+import ContactForm from "./components/landing/ContactForm";
 import { Footer } from "./components/landing/Footer";
 
 const App = () => {
