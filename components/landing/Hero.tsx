@@ -25,11 +25,8 @@ export const Hero = () => {
         style={{ y: backgroundY }}
         className="absolute inset-0 z-0"
       >
-        <img 
-          src={heroBg} 
-          alt="Model Background" 
-          className="w-full h-full object-cover object-bottom"
-        />
+        <div className="w-full h-full bg-[#E5E5E5]" />
+
       </motion.div>
 
       {/* Logo Recreated with SVG - Parallax Effect */}
