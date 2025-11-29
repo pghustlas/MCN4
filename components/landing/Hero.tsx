@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import LocoLogo from "../../imports/LocoLogo";
-import heroBg from "figma:asset/c730c5bda36c78a0c16dfaad462cb2b1b9bcf31e.png";
+// import heroImg from "figma:asset/c730c5bda36c78a0c16dfaad462cb2b1b9bcf31e.png";
 
 export const Hero = () => {
   const ref = useRef(null);
