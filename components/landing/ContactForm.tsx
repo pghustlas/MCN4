@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { toast } from "sonner"; // FIXED: 잘못된 "sonner@2.0.3" 제거
+import { toast } from "sonner";
 
+// 기본 ContactForm 컴포넌트
 export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
@@ -8,7 +9,9 @@ export default function ContactForm() {
     message: "",
   });
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
@@ -16,41 +19,49 @@ export default function ContactForm() {
     e.preventDefault();
 
     try {
-      // 실제 제출 동작은 나중에 연결한다고 가정
-      toast.success("Message sent!");
+      // 이메일 전송 기능은 나중에 연결
+      toast.success("메시지가 성공적으로 전송되었습니다!");
     } catch (err) {
-      toast.error("Failed to send message.");
+      toast.error("전송에 실패했습니다.");
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 max-w-lg mx-auto px-4 py-10"
+    >
       <input
+        type="text"
         name="name"
-        placeholder="Your name"
+        placeholder="이름"
         value={form.name}
         onChange={handleChange}
-        className="border p-2 w-full"
+        className="border p-3 w-full rounded"
       />
 
       <input
+        type="email"
         name="email"
-        placeholder="Your email"
+        placeholder="이메일"
         value={form.email}
         onChange={handleChange}
-        className="border p-2 w-full"
+        className="border p-3 w-full rounded"
       />
 
       <textarea
         name="message"
-        placeholder="Message"
+        placeholder="메시지"
         value={form.message}
         onChange={handleChange}
-        className="border p-2 w-full h-32"
+        className="border p-3 w-full h-32 rounded resize-none"
       />
 
-      <button type="submit" className="bg-black text-white px-4 py-2">
-        Send
+      <button
+        type="submit"
+        className="bg-black text-white px-5 py-3 rounded w-full"
+      >
+        보내기
       </button>
     </form>
   );
